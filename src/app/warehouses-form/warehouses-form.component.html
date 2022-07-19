@@ -1,0 +1,10 @@
+<form (ngSubmit)="save(warehouse)">
+    
+    <label for="address">Address</label>
+    <input pInputText type="text" name="address" [(ngModel)]="warehouse.address">
+
+    <label for="capacity">Capacity</label>
+    <input pInputText type="number" name="capacity" [(ngModel)]="warehouse.capacity">
+    
+    <input type="submit" name="Submit">
+</form>

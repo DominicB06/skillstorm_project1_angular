@@ -1,0 +1,29 @@
+<section>
+  <nav>
+    <a [routerLink]="['/list-warehouses']">Find All Warehouses</a>
+    <br>
+    <a [routerLink]="['/enter-warehouse']">Create new Warehouse</a> 
+    <br>
+    <a [routerLink]="['/delete-warehouse']">Delete a Warehouse</a>  
+    <br>
+    <a [routerLink]="['/update-warehouse']">Update a Warehouse</a>  
+  </nav>
+</section>
+
+<br><br>
+
+<section>
+  <nav>
+    <a [routerLink]="['/find-inventory']">See warehouse inventory</a>
+    <br>
+    <a [routerLink]="['/save-inventory']">Save and item to an inventory</a>
+  </nav>
+</section>
+
+<section>
+  <!-- render the selected component right here -->
+  <router-outlet></router-outlet>
+</section>
+
+
+

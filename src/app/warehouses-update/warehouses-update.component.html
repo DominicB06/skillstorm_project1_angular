@@ -1,0 +1,13 @@
+<form (ngSubmit)="update(warehouse)">
+    
+    <label for="warehouseId">Warehouse ID (required)</label>
+    <input pInputText type="number" name="warehouseId" [(ngModel)]="warehouse.warehouseID">
+
+    <label for="address">Address</label>
+    <input pInputText type="text" name="address" [(ngModel)]="warehouse.address">
+
+    <label for="capacity">Capacity</label>
+    <input pInputText type="number" name="capacity" [(ngModel)]="warehouse.capacity">
+    
+    <input type="submit" name="Submit">
+</form>

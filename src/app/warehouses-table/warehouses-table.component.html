@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>WarehouseID</th>
+        <th>Address</th>
+        <th>Capacity</th>
+    </tr>
+    <tr *ngFor="let temp of warehouses">
+        <td>{{temp.warehouseID}}</td>
+        <td>{{temp.address}}</td>
+        <td>{{temp.capacity}}</td>
+    </tr>
+</table>

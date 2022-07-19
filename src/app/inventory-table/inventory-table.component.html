@@ -1,0 +1,20 @@
+<form (ngSubmit)="find(warehouseId)">
+    
+    <label for="warehouseId">Warehouse ID</label>
+    <input pInputText type="number" name="warehouseId" [(ngModel)]="warehouseId">
+    
+    <input type="submit" name="Find">
+</form>
+<br>
+<table>
+    <tr>
+        <th>VaultID</th>
+        <th>Size</th>
+        <th>Warehouse</th>
+    </tr>
+    <tr *ngFor="let temp of inventory">
+        <td>{{temp.vaultID}}</td>
+        <td>{{temp.size}}</td>
+        <td>{{temp.warehouse}}</td>
+    </tr>
+</table>
