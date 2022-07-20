@@ -1,0 +1,13 @@
+<form (ngSubmit)="update(inventory)">
+    
+    <label for="vaultId">Vault ID (required)</label>
+    <input pInputText type="number" name="warehouseId" [(ngModel)]="inventory.vaultID">
+
+    <label for="size">Size</label>
+    <input pInputText type="text" name="size" [(ngModel)]="inventory.size">
+
+    <label for="warehouse">Warehouse</label>
+    <input pInputText type="number" name="capacity" [(ngModel)]="inventory.warehouse">
+    
+    <input type="submit" name="Submit">
+</form>

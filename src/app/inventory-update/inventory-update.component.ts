@@ -3,11 +3,11 @@ import { InventoryApiService } from '../inventory-api.service';
 import { Inventory } from '../models/Inventory';
 
 @Component({
-  selector: 'app-inventory-save',
-  templateUrl: './inventory-save.component.html',
-  styleUrls: ['./inventory-save.component.css']
+  selector: 'app-inventory-update',
+  templateUrl: './inventory-update.component.html',
+  styleUrls: ['./inventory-update.component.css']
 })
-export class InventorySaveComponent implements OnInit {
+export class InventoryUpdateComponent implements OnInit {
 
   inventoryApi: InventoryApiService
   inventory: Inventory
@@ -20,11 +20,10 @@ export class InventorySaveComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  save(inventory: Inventory){
+  update(inventory: Inventory){
 
-    this.inventoryApi.save(inventory).subscribe(result => {
+    this.inventoryApi.update(inventory).subscribe(result => {
       console.log(result)
     })
   }
-
 }

@@ -1,0 +1,13 @@
+<form (ngSubmit)="save(item)">
+    
+    <label for="serialNum">SerialNum</label>
+    <input pInputText type="number" name="serialNum" [(ngModel)]="item.serialNum">
+
+    <label for="name">Name</label>
+    <input pInputText type="string" name="name" [(ngModel)]="item.name">
+
+    <label for="vaultId">Vault ID</label>
+    <input pInputText type="number" name="vaultId" [(ngModel)]="item.vaultID">
+    
+    <input type="submit" name="Submit">
+</form>

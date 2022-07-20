@@ -1,4 +1,4 @@
-<form (ngSubmit)="save(inventory, items)">
+<form (ngSubmit)="save(inventory)">
     
     <label for="size">Size</label>
     <input pInputText type="number" name="size" [(ngModel)]="inventory.size">
@@ -9,19 +9,5 @@
     <input type="submit" name="Submit">
 </form>
 
-<form (ngSubmit)="addItem(tempItem)">
-    <br>
-    <div>ADD ALL ITEMS BEFORE PRESSING SUBMIT</div>
-    <div>Add items below:</div>
-    <br>
-    <label for="serialNum">Serial Number</label>
-    <input pInputText type="number" name="serialNum" [(ngModel)]="tempItem.serialNum">
 
-    <label for="name">Name</label>
-    <input pInputText type="string" name="name" [(ngModel)]="tempItem.name">
-
-    <input type="submit" name="Add" title="add">
-
-
-</form>
 

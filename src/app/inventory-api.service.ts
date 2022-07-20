@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Inventory } from './models/Inventory';
-import { Item } from './models/Item';
 
 @Injectable({
   providedIn: 'root'
@@ -31,16 +30,14 @@ export class InventoryApiService {
     return this.http.post(this.baseUrl, inventory).pipe(catchError(this.handleError))
   }
 
-  saveItems(item: Item): Observable<any>{
-    return this.http.post(this.itemsUrl, item).pipe(catchError(this.handleError))
-  }
-
   update(inventory: Inventory): Observable<any>{
     return this.http.put(this.baseUrl, inventory).pipe(catchError(this.handleError))
   } 
 
   delete(id: number): Observable<any>{
     let params = new HttpParams().set("id", id)
+    //if we delete a vault also delete all items in that vault
+    //this.http.delete(this.itemsUrl, {params: params}).pipe(catchError(this.handleError))
     return this.http.delete(this.baseUrl, {params: params}).pipe(catchError(this.handleError))
   }
 
