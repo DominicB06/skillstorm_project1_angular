@@ -5,6 +5,9 @@
             <th pSortableColumn="vaultID">Vault ID<p-sortIcon field="vaultID"></p-sortIcon></th>
             <th>Size</th>
             <th pSortableColumn="warehouseID">Warehouse ID<p-sortIcon field="warehouseID"></p-sortIcon></th>
+            <th style="width: 3rem"></th>
+            <th style="width: 3rem"></th>
+            <th style="width: 3rem"></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-vault let-expanded="expanded">
@@ -15,7 +18,10 @@
             </td>
             <td>{{vault.vaultID}}</td>
             <td>{{vault.size}}</td> 
-            <td>{{vault.warehouse}}</td>  
+            <td>{{vault.warehouse}}</td> 
+            <td> <p-button label="" icon="pi pi-upload" iconPos="left"></p-button> </td>
+            <td> <p-button label="" icon="pi pi-cog" iconPos="left"></p-button> </td>
+            <td> <p-button label="" icon="pi pi-times" iconPos="left"></p-button> </td>
         </tr>
     </ng-template>
 

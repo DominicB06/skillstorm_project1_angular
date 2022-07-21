@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import {TableModule} from 'primeng/table';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {ButtonModule} from 'primeng/button';
+import {ImageModule} from 'primeng/image';
+import {Card, CardModule} from 'primeng/card';
+import {InputTextModule} from 'primeng/inputtext';
+import {DialogModule} from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -46,7 +51,12 @@ import { ItemsUpdateComponent } from './items-update/items-update.component';
     FormsModule,
     TableModule,
     FontAwesomeModule,
-    ButtonModule
+    ButtonModule,
+    ImageModule,
+    CardModule,
+    InputTextModule,
+    DialogModule,
+    BrowserAnimationsModule
     
   ],
   providers: [],
