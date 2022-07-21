@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ItemsApiService } from '../items-api.service';
 import { Item } from '../models/Item';
 
@@ -11,19 +11,15 @@ export class ItemsReadComponent implements OnInit {
 
   items: Array<Item> = []
   itemApi: ItemsApiService
-  vaultId: number = 0
+  @Input() vaultId = 0
 
   constructor(itemApi: ItemsApiService) { 
     this.itemApi = itemApi
   }
 
   ngOnInit(): void {
-  }
-
-  find(vaultId: number){
-
-    this.itemApi.findByVaultId(vaultId).subscribe(resp => {
-      this.items = resp
-    })
+      this.itemApi.findByVaultId(this.vaultId).subscribe(resp => {
+        this.items = resp
+      })
   }
 }

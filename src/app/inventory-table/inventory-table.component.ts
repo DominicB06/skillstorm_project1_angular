@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { InventoryApiService } from '../inventory-api.service';
 import { Inventory } from '../models/Inventory';
 
@@ -11,20 +11,23 @@ export class InventoryTableComponent implements OnInit {
 
   inventory: Array<Inventory> = []
   inventoryApi: InventoryApiService
-  warehouseId: number = 0
+  vaultId:number = 0
 
+  @Input() warehouseId = 0
+  
   constructor(invenroyApi: InventoryApiService) { 
     this.inventoryApi = invenroyApi
   }
 
   ngOnInit(): void {
-  }
-
-  find(warehouseId: number){
-
-    this.inventoryApi.findByWarehouse(warehouseId).subscribe(resp => {
+    console.log("inventory initialized " + this.warehouseId)
+    this.inventoryApi.findByWarehouse(this.warehouseId).subscribe(resp => {
       this.inventory = resp
     })
+  }
+
+  setVaultId(vaultId: number){
+    this.vaultId = vaultId
   }
 
 }

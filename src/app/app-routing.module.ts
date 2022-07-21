@@ -35,7 +35,7 @@ const routes: Routes = [{
   path:'delete-inventory',
   component: InventoryDeleteComponent
 },{
-  path:'update-inventory',
+  path:'update-inventory', 
   component: InventoryUpdateComponent
 },{
   path:'read-items',

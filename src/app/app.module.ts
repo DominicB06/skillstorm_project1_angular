@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {TableModule} from 'primeng/table';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {ButtonModule} from 'primeng/button';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +21,7 @@ import { ItemsReadComponent } from './items-read/items-read.component';
 import { ItemsSaveComponent } from './items-save/items-save.component';
 import { ItemsDeleteComponent } from './items-delete/items-delete.component';
 import { ItemsUpdateComponent } from './items-update/items-update.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +43,11 @@ import { ItemsUpdateComponent } from './items-update/items-update.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TableModule,
+    FontAwesomeModule,
+    ButtonModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

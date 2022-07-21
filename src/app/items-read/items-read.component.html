@@ -1,21 +1,16 @@
-<form (ngSubmit)="find(vaultId)">
-    
-    <label for="vaultId">Vault ID</label>
-    <input pInputText type="number" name="vaultId" [(ngModel)]="vaultId">
-    
-    <input type="submit" name="Find">
-</form>
-<br>
-<table>
-    <tr>
-        <th>SerialNum</th>
-        <th>Name</th>
-        <th>VaultID</th>
-    </tr>
-    <tr *ngFor="let temp of items">
-        <td>{{temp.serialNum}}</td>
-        <td>{{temp.name}}</td>
-        <td>{{temp.vaultID}}</td>
-    </tr>
-</table>
-
+<p-table [value]="items" dataKey="serialNum">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Serial Number</th>
+            <th>Name</th>
+            <th>Vault ID</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+        <tr>
+            <td>{{item.serialNum}}</td>
+            <td>{{item.name}}</td> 
+            <td>{{item.vaultID}}</td>  
+        </tr>
+    </ng-template>
+</p-table>
