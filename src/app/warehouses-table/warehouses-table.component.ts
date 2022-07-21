@@ -18,11 +18,8 @@ export class WarehousesTableComponent implements OnInit {
 
   displayAddWarehouse: boolean = false
   displayUpdateWarehouse: boolean = false
-  displayDeleteWarehouse: boolean = false
+  
 
-  displayAddVault: boolean = false
-  displayEditVault: boolean = false
-  displayDeleteVault: boolean = false
 
   constructor(warehousesApi: WarehousesApiService) { 
     this.warehouseApi = warehousesApi
@@ -39,10 +36,6 @@ export class WarehousesTableComponent implements OnInit {
     console.log(this.warehouseId)
   }
 
-  deleteWarehouse(){
-
-  }
-
   saveWarehouse(){
 
   }
@@ -51,16 +44,22 @@ export class WarehousesTableComponent implements OnInit {
 
   }
 
-  showInventorySaveDialog(id: number){
-    this.displayAddVault = true
-    this.warehouseId = id
+  showEditWarehouse(warehouseId :number){
+    this.warehouseId = warehouseId
+    this.displayUpdateWarehouse = true
     console.log(this.warehouseId)
   }
 
-  showWarehouseUpdateDialog(id: number){
-    this.displayUpdateWarehouse = true
-    this.warehouseId = id
-    console.log(this.warehouseId)
+  showAddWarehouse(){
+    this.displayAddWarehouse = true
+  }
+
+  deleteWarehouse(warehouseId: number){
+
+    this.warehouseApi.delete(warehouseId).subscribe(result => {
+      console.log(result)
+    })
+
   }
 
 }

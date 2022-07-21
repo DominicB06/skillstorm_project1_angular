@@ -12,6 +12,7 @@ export class InventoryTableComponent implements OnInit {
   inventory: Array<Inventory> = []
   inventoryApi: InventoryApiService
   vaultId:number = 0
+  displayAddVault: boolean = false
 
   @Input() warehouseId = 0
   
@@ -28,6 +29,11 @@ export class InventoryTableComponent implements OnInit {
 
   setVaultId(vaultId: number){
     this.vaultId = vaultId
+  }
+
+  showInventorySaveDialog(){
+    this.displayAddVault = true
+    console.log(this.warehouseId)
   }
 
 }

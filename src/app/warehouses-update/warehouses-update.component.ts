@@ -23,10 +23,10 @@ export class WarehousesUpdateComponent implements OnInit {
   }
 
   update(warehouse: Warehouse){
-
+    console.log(warehouse)
     warehouse.warehouseID = this.warehouseId
     this.warehouseApi.update(warehouse).subscribe(result => {
-      console.log(result)
+    console.log(result)
     })
   }
 

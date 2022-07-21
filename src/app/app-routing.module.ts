@@ -8,7 +8,6 @@ import { ItemsDeleteComponent } from './items-delete/items-delete.component';
 import { ItemsReadComponent } from './items-read/items-read.component';
 import { ItemsSaveComponent } from './items-save/items-save.component';
 import { ItemsUpdateComponent } from './items-update/items-update.component';
-import { WarehousesDeleteComponent } from './warehouses-delete/warehouses-delete.component';
 import { WarehousesFormComponent } from './warehouses-form/warehouses-form.component';
 import { WarehousesTableComponent } from './warehouses-table/warehouses-table.component';
 import { WarehousesUpdateComponent } from './warehouses-update/warehouses-update.component';
@@ -19,9 +18,6 @@ const routes: Routes = [{
 },{
   path:'enter-warehouse',
   component: WarehousesFormComponent
-},{
-  path:'delete-warehouse',
-  component: WarehousesDeleteComponent
 },{
   path:'update-warehouse',
   component: WarehousesUpdateComponent

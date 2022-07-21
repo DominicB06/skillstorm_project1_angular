@@ -1,7 +1,7 @@
 <p-table [value]="inventory" dataKey="vaultID">
     <ng-template pTemplate="header">
         <tr>
-            <th style="width: 3rem"></th>
+            <th style="width: 3rem"> <p-button label="" icon="pi pi-upload" iconPos="left" (click)="showInventorySaveDialog()"></p-button></th>
             <th pSortableColumn="vaultID">Vault ID<p-sortIcon field="vaultID"></p-sortIcon></th>
             <th>Size</th>
             <th pSortableColumn="warehouseID">Warehouse ID<p-sortIcon field="warehouseID"></p-sortIcon></th>
@@ -36,6 +36,9 @@
     </ng-template>
 
 </p-table>
-      
+
+<p-dialog header="Add a Vault" [(visible)]="displayAddVault">
+    <app-inventory-save [warehouseId] = "warehouseId"></app-inventory-save>
+</p-dialog>
 
 

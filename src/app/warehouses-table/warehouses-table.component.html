@@ -2,11 +2,10 @@
 
     <ng-template pTemplate="header">
         <tr>
-            <th style="width: 3rem"></th>
+            <th style="width: 3rem"> <p-button label="" icon="pi pi-upload" iconPos="left" (click)="showAddWarehouse()"></p-button> </th>
             <th pSortableColumn="warehouseID"> WarehouseID <p-sortIcon field="warehouseID"></p-sortIcon></th>
             <th>Address</th>
             <th>Capacity</th>
-            <th style="width: 3rem"></th>
             <th style="width: 3rem"></th>
             <th style="width: 3rem"></th>
         </tr>
@@ -21,9 +20,8 @@
             <td>{{warehouse.warehouseID}}</td>
             <td>{{warehouse.address}}</td>
             <td>{{warehouse.capacity}}</td>
-            <td> <p-button label="" icon="pi pi-upload" iconPos="left" (click)="showInventorySaveDialog(warehouse.warehouseID)"></p-button> </td>
-            <td> <p-button label="" icon="pi pi-cog" iconPos="left" (click)="showWarehouseUpdateDialog(warehouse.warehouseID)"></p-button> </td>
-            <td> <p-button label="" icon="pi pi-times" iconPos="left"></p-button> </td>
+            <td> <p-button label="" icon="pi pi-cog" iconPos="left" (click)="showEditWarehouse(warehouse.warehouseID)"></p-button> </td>
+            <td> <p-button label="" icon="pi pi-times" iconPos="left" (click)="deleteWarehouse(warehouse.warehouseID)"></p-button> </td>
             
         </tr>
     </ng-template>
@@ -46,12 +44,8 @@
     <app-warehouses-form></app-warehouses-form>
 </p-dialog>
 
-<p-dialog header="Add a Vault" [(visible)]="displayAddVault">
-    <app-inventory-save [warehouseId] = "warehouseId"></app-inventory-save>
-</p-dialog>
-
 <p-dialog header='Update Warehouse' [(visible)]="displayUpdateWarehouse">
-    <app-warehouses-update [warehouseId] = "warehouseId"></app-warehouses-update>
+    <app-warehouses-update [warehouseId]="warehouseId"></app-warehouses-update>
 </p-dialog>
 
 
