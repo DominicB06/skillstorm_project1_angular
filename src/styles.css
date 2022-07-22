@@ -7,3 +7,12 @@
 .input-field{
     padding: 5px;
 }
+
+.center-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 25%;
+    size: 1px;
+}

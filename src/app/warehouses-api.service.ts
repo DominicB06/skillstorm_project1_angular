@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable, Subject, throwError, tap } from 'rxjs';
 import { Warehouse } from './models/Warehouse';
 
 @Injectable({
@@ -15,6 +15,7 @@ export class WarehousesApiService {
     this.http = http
   }
 
+  private _refreshrequired = new Subject<void>();
 
   findAll(): Observable<any>{
     return this.http.get(this.baseUrl)
@@ -31,18 +32,30 @@ export class WarehousesApiService {
   }
 
   save(warehouse: Warehouse): Observable<any>{
-    return this.http.post(this.baseUrl, warehouse).pipe(catchError(this.handleError))
+    return this.http.post(this.baseUrl, warehouse).pipe(catchError(this.handleError)).pipe(
+      tap(()=>{
+        this.Refreshrequired.next();
+      })
+    )
   }
 
   update(warehouse: Warehouse): Observable<any>{
-    return this.http.put(this.baseUrl, warehouse).pipe(catchError(this.handleError))
+    return this.http.put(this.baseUrl, warehouse).pipe(catchError(this.handleError)).pipe(
+      tap(()=>{
+        this.Refreshrequired.next();
+      })
+    )
   } 
 
   delete(id: number): Observable<any>{
     let params = new HttpParams().set("id", id)
-    return this.http.delete(this.baseUrl, {params: params}).pipe(catchError(this.handleError))
-  }
 
+    return this.http.delete(this.baseUrl, {params: params}).pipe(catchError(this.handleError)).pipe(
+      tap(()=>{
+        this.Refreshrequired.next();
+      })
+    )
+  }
 
    private handleError(error: HttpErrorResponse){
     console.log(error)
@@ -50,4 +63,9 @@ export class WarehousesApiService {
       throw new Error() 
     })
   }
+
+  get Refreshrequired(){
+    return this._refreshrequired
+  }
+
 }

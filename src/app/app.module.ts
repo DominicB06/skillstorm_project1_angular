@@ -8,6 +8,7 @@ import {Card, CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ToastModule} from 'primeng/toast';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -19,11 +20,9 @@ import { WarehousesFormComponent } from './warehouses-form/warehouses-form.compo
 import { WarehousesUpdateComponent } from './warehouses-update/warehouses-update.component';
 import { InventoryTableComponent } from './inventory-table/inventory-table.component';
 import { InventorySaveComponent } from './inventory-save/inventory-save.component';
-import { InventoryDeleteComponent } from './inventory-delete/inventory-delete.component';
 import { InventoryUpdateComponent } from './inventory-update/inventory-update.component';
 import { ItemsReadComponent } from './items-read/items-read.component';
 import { ItemsSaveComponent } from './items-save/items-save.component';
-import { ItemsDeleteComponent } from './items-delete/items-delete.component';
 import { ItemsUpdateComponent } from './items-update/items-update.component';
 
 
@@ -35,11 +34,9 @@ import { ItemsUpdateComponent } from './items-update/items-update.component';
     WarehousesUpdateComponent,
     InventoryTableComponent,
     InventorySaveComponent,
-    InventoryDeleteComponent,
     InventoryUpdateComponent,
     ItemsReadComponent,
     ItemsSaveComponent,
-    ItemsDeleteComponent,
     ItemsUpdateComponent
   ],
   imports: [
@@ -54,8 +51,8 @@ import { ItemsUpdateComponent } from './items-update/items-update.component';
     CardModule,
     InputTextModule,
     DialogModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

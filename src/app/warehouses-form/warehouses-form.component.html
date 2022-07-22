@@ -10,18 +10,12 @@
             <label for="address" class="input-field">Address</label>
             <input pInputText type="text" name="address" [(ngModel)]="warehouse.address">
         </div>
-        
-    
         <br>
-
         <div class="input-field">
             <label for="capacity" class="input-field">Capacity</label>
             <input pInputText type="number" name="capacity" [(ngModel)]="warehouse.capacity">
         </div>
-        
-        
         <br>
-
         <div class="center">
             <p-button label="Save" type="submit" name="Submit"></p-button>
         </div>
@@ -29,3 +23,5 @@
     </form>
 
 </p-card>
+
+<p-toast position="bottom-center"></p-toast>

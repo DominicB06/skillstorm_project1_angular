@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InventoryDeleteComponent } from './inventory-delete/inventory-delete.component';
 import { InventorySaveComponent } from './inventory-save/inventory-save.component';
 import { InventoryTableComponent } from './inventory-table/inventory-table.component';
 import { InventoryUpdateComponent } from './inventory-update/inventory-update.component';
-import { ItemsDeleteComponent } from './items-delete/items-delete.component';
 import { ItemsReadComponent } from './items-read/items-read.component';
 import { ItemsSaveComponent } from './items-save/items-save.component';
 import { ItemsUpdateComponent } from './items-update/items-update.component';
@@ -28,9 +26,6 @@ const routes: Routes = [{
   path:'save-inventory',
   component: InventorySaveComponent
 },{
-  path:'delete-inventory',
-  component: InventoryDeleteComponent
-},{
   path:'update-inventory', 
   component: InventoryUpdateComponent
 },{
@@ -39,9 +34,6 @@ const routes: Routes = [{
 },{
   path:'save-items',
   component: ItemsSaveComponent
-},{
-  path:'delete-items',
-  component: ItemsDeleteComponent
 },{
   path:'update-items',
   component: ItemsUpdateComponent

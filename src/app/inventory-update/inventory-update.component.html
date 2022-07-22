@@ -1,13 +1,26 @@
-<form (ngSubmit)="update(inventory)">
-    
-    <label for="vaultId">Vault ID (required)</label>
-    <input pInputText type="number" name="warehouseId" [(ngModel)]="inventory.vaultID">
+<p-card>
+    <ng-template pTemplate="header"> 
+        <div class="center" style="font-size: 18px;">Enter Vault Details</div> 
+    </ng-template>
 
-    <label for="size">Size</label>
-    <input pInputText type="text" name="size" [(ngModel)]="inventory.size">
+    <form (ngSubmit)="update(inventory)">
 
-    <label for="warehouse">Warehouse</label>
-    <input pInputText type="number" name="capacity" [(ngModel)]="inventory.warehouse">
-    
-    <input type="submit" name="Submit">
-</form>
+        <div class="input-field">
+            <label for="size">Size</label>
+            <br>
+            <input pInputText type="text" name="size" [(ngModel)]="inventory.size">    
+        </div>
+
+        <div class="input-field">
+            <label for="warehouse">Warehouse</label>
+            <br>
+            <input pInputText type="number" name="capacity" [(ngModel)]="inventory.warehouse"> 
+        </div>
+        
+        <div class="center">
+            <p-button label="Save" type="submit" name="Submit" ></p-button>
+        </div>
+    </form>
+</p-card>
+
+<p-toast position="bottom-center"></p-toast>
