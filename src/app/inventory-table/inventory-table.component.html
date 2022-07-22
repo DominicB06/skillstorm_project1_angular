@@ -1,7 +1,7 @@
 <p-table [value]="inventory" dataKey="vaultID">
     <ng-template pTemplate="header">
         <tr>
-            <th style="width: 3rem"> <p-button label="" icon="pi pi-upload" iconPos="left" (click)="showSaveInventory()"></p-button></th>
+            <th style="width: 3rem"> <p-button label="" icon="pi pi-plus" iconPos="left" (click)="showSaveInventory()"></p-button></th>
             <th pSortableColumn="vaultID">Vault ID<p-sortIcon field="vaultID"></p-sortIcon></th>
             <th>Size</th>
             <th pSortableColumn="warehouseID">Warehouse ID<p-sortIcon field="warehouseID"></p-sortIcon></th>
